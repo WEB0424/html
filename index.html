@@ -1,0 +1,148 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                margin-top: 5px;
+            }
+            h1 {
+                background-color: #6667ab;
+                color: #ffffff;
+                text-align: center;
+            }
+            h2 {
+                font-size: 1rem;
+            }
+            form {
+                width: 375px;
+                margin: auto;
+            }
+            label {
+                display: block;
+            }
+            input {
+                display: block;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+            textarea {
+                display: block;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+            button {
+                width: 100%;
+                padding: 1rem;
+                background-color: #6667ab;
+                color: #ffffff;
+                border: 0;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            div {
+                border: 1px solid #6667ab;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                color: #666666;
+                max-width: 375px;
+            }
+            span {
+                padding-top: 2px;
+                padding-right: 5px;
+                padding-bottom: 2px;
+                padding-left: 5px;
+                color: #ffffff;
+                border-radius: 2px;
+            }
+            span.inprogress {
+                background: #efac00;
+            }
+            span.done {
+                background: green;
+            }
+            a {
+                margin-right: 10px;
+            }
+            a.delete {
+                color: red;
+            }
+            h2#tituloTareas {
+                color: green;
+            }
+            p.details {
+                font-size: 0.8rem;
+            }
+            p.actions {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+            @media screen and (min-width: 475px) {
+                div {
+                    float: left;
+                    margin-right: 10px;
+                }
+            }
+            div:hover {
+                zoom: 1.2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Todolist</h1>
+        <h2>Nueva <strong>tarea</strong></h2>
+
+        <form>
+            <label for="">Escribe la descripción de la tarea</label>
+            <textarea></textarea>
+            <label for="">Fecha de finalización</label>
+            <input type="date" />
+            <button>Insertar</button>
+        </form>
+
+        <h2>Tareas</h2>
+
+        <div>
+            <p>Preparar la clase de JS</p>
+            <p class="details">
+                <span class="inprogress">IN PROGRESS</span> Fecha límite: 25
+                Junio
+            </p>
+            <p class="actions">
+                <span>
+                    <a href="editar">Editar</a>
+                    <a href="finalizar">Marcar como finalizada</a>
+                </span>
+                <span class="right">
+                    <a href="eliminar" class="delete">Eliminar</a>
+                </span>
+            </p>
+        </div>
+
+        <div>
+            <p>Preparar la clase de JS</p>
+            <p class="details">
+                <span class="done">DONE</span> Fecha límite: 25 Junio
+            </p>
+            <p class="actions">
+                <span>
+                    <a href="editar">Editar</a>
+                    <a href="finalizar">Marcar como finalizada</a>
+                </span>
+                <span class="right">
+                    <a href="eliminar" class="delete">Eliminar</a>
+                </span>
+            </p>
+        </div>
+    </body>
+</html>
+
+<!--
+320px - 475px :mobile
+475px - 767px :tablets android (no existe)
+768px - 1023px : ipads en vertical
+1024px - 1400 : ipads en horizontal y pantallas desktop medianas
+> 1400px : pantallas enormes 
+-->
