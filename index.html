@@ -1,142 +1,208 @@
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style>
-            body {
-                font-family: sans-serif;
-                margin-top: 5px;
-            }
-            h1 {
-                background-color: #6667ab;
-                color: #ffffff;
-                text-align: center;
-            }
-            h2 {
-                font-size: 1rem;
-            }
-            form {
-                width: 375px;
-                margin: auto;
-            }
-            label {
-                display: block;
-            }
-            input {
-                display: block;
-                margin-bottom: 1rem;
-                width: 100%;
-            }
-            textarea {
-                display: block;
-                margin-bottom: 1rem;
-                width: 100%;
-            }
-            button {
-                width: 100%;
-                padding: 1rem;
-                background-color: #6667ab;
-                color: #ffffff;
-                border: 0;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-            div {
-                border: 1px solid #6667ab;
-                padding: 1rem;
-                margin-bottom: 1rem;
-                color: #666666;
-                max-width: 375px;
-            }
-            span {
-                padding-top: 2px;
-                padding-right: 5px;
-                padding-bottom: 2px;
-                padding-left: 5px;
-                color: #ffffff;
-                border-radius: 2px;
-            }
-            span.inprogress {
-                background: #efac00;
-            }
-            span.done {
-                background: green;
-            }
-            a {
-                margin-right: 10px;
-            }
-            a.delete {
-                color: red;
-            }
-            h2#tituloTareas {
-                color: green;
-            }
-            p.details {
-                font-size: 0.8rem;
-            }
-            p.actions {
-                font-size: 0.8rem;
-                text-transform: uppercase;
-            }
-            @media screen and (min-width: 475px) {
-                div {
-                    float: left;
-                    margin-right: 10px;
-                }
-            }
-            div:hover {
-                zoom: 1.2;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Todolist</h1>
-        <h2>Nueva <strong>tarea</strong></h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin-top: 5px;
+      }
+      h1 {
+        background-color: #6667ab;
+        color: #ffffff;
+        text-align: center;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      form {
+        width: 375px;
+        margin: auto;
+      }
+      label {
+        display: block;
+      }
+      input {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      textarea {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      button {
+        width: 100%;
+        padding: 1rem;
+        background-color: #6667ab;
+        color: #ffffff;
+        border: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      div {
+        border: 1px solid #6667ab;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        color: #666666;
+        max-width: 375px;
+      }
+      span {
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        color: #ffffff;
+        border-radius: 2px;
+      }
+      span.inprogress {
+        background: #efac00;
+      }
+      span.done {
+        background: green;
+      }
+      a {
+        margin-right: 10px;
+      }
+      a.delete {
+        color: red;
+      }
+      h2#tituloTareas {
+        color: green;
+      }
+      p.details {
+        font-size: 0.8rem;
+      }
+      p.actions {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+      @media screen and (min-width: 475px) {
+        div {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+      /*
+      div:hover {
+        zoom: 1.2;
+        transition: 1s;
+      }*/
+    </style>
+  </head>
+  <body>
+    <h1>Todolist</h1>
+    <h2>Nueva <strong>tarea</strong></h2>
 
-        <form>
-            <label for="">Escribe la descripción de la tarea</label>
-            <textarea></textarea>
-            <label for="">Fecha de finalización</label>
-            <input type="date" />
-            <button>Insertar</button>
-        </form>
+    <form>
+      <label for="">Escribe la descripción de la tarea</label>
+      <textarea></textarea>
+      <label for="">Fecha de finalización</label>
+      <input type="date" />
+      <button>Insertar</button>
+    </form>
 
-        <h2>Tareas</h2>
+    <h2>Tareas</h2>
 
-        <div>
-            <p>Preparar la clase de JS</p>
-            <p class="details">
-                <span class="inprogress">IN PROGRESS</span> Fecha límite: 25
-                Junio
-            </p>
-            <p class="actions">
-                <span>
-                    <a href="editar">Editar</a>
-                    <a href="finalizar">Marcar como finalizada</a>
-                </span>
-                <span class="right">
-                    <a href="eliminar" class="delete">Eliminar</a>
-                </span>
-            </p>
-        </div>
+    <section id="tasklist"></section>
 
-        <div>
-            <p>Preparar la clase de JS</p>
-            <p class="details">
-                <span class="done">DONE</span> Fecha límite: 25 Junio
-            </p>
-            <p class="actions">
-                <span>
-                    <a href="editar">Editar</a>
-                    <a href="finalizar">Marcar como finalizada</a>
-                </span>
-                <span class="right">
-                    <a href="eliminar" class="delete">Eliminar</a>
-                </span>
-            </p>
-        </div>
-    </body>
+    <script>
+      let taskList = document.getElementById("tasklist");
+
+      var task1 = {
+        description: "Preparar la clase de JS",
+        status: "inprogress",
+        dueDate: "06/25/2024",
+      };
+      var task2 = {
+        description: "Hacer las maletas",
+        status: "done",
+        dueDate: "04/02/2024",
+      };
+      var task3 = {
+        description: "Viajar a Marte",
+        status: "inprogress",
+        dueDate: "11/25/2024",
+      };
+      var tasks = [
+        task1,
+        task2,
+        task3,
+        task1,
+        task2,
+        task3,
+        task1,
+        task2,
+        task3,
+        task1,
+        task2,
+        task3,
+        task1,
+        task2,
+        task3,
+        task1,
+        task2,
+        task3,
+      ];
+
+      for (task of tasks) {
+        createHTML(task);
+      }
+
+      function remainingDays(date) {
+        return (
+          0 - Math.round((new Date() - new Date(date)) / 1000 / 60 / 60 / 24)
+        );
+      }
+
+      function createHTML(task) {
+        if (task.status === "inprogress") {
+          var status = "IN PROGRESS";
+        }
+
+        if (task.status === "done") {
+          var status = "DONE";
+        }
+
+        if (remainingDays(task.dueDate) >= 0) {
+          var action = "Faltan";
+        } else {
+          var action = "Pasan";
+        }
+
+        var html =
+          "<div>" +
+          "<p>" +
+          task.description +
+          "</p>" +
+          '<p class="details">' +
+          '<span class="' +
+          task.status +
+          '">' +
+          status +
+          "</span> Fecha límite: " +
+          task.dueDate +
+          " - " +
+          action +
+          ": " +
+          remainingDays(task.dueDate) +
+          " días</p>" +
+          '<p class="actions">' +
+          "<span>" +
+          '<a href="editar">Editar</a>' +
+          '<a href="finalizar">Marcar como finalizada</a>' +
+          "</span>" +
+          '<span class="right">' +
+          '<a href="eliminar" class="delete">Eliminar</a>' +
+          "</span>" +
+          "</p>" +
+          "</div>";
+        taskList.innerHTML += html;
+      }
+    </script>
+  </body>
 </html>
 
 <!--
